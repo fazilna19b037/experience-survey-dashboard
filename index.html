@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>National Projects Office (NPO), UAE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --npo:       #1A3C4E;
+  --npo-mid:   #2A5F7A;
+  --npo-lt:    #E4EFF5;
+  --npo-xlt:   #F2F8FB;
+  --accent:    #C8953A;
+  --accent-lt: #FBF0DC;
+  --green:     #1B7A56;
+  --green-lt:  #E0F2EB;
+  --red:       #B83228;
+  --red-lt:    #FBEAE9;
+  --amber:     #B56A08;
+  --amber-lt:  #FFF1D6;
+  --purple:    #5B4B8A;
+  --purple-lt: #EDE9F8;
+  --bg:        #F4F7FA;
+  --surface:   #FFFFFF;
+  --s2:        #F0F4F8;
+  --border:    #DDE4EC;
+  --border2:   #C5D0DC;
+  --text:      #182533;
+  --muted:     #546878;
+  --dim:       #8BA0B0;
+  --ff-d: 'Playfair Display', serif;
+  --ff-b: 'Inter', sans-serif;
+  --grad-a: linear-gradient(135deg, #123B4A 0%, #1F6C78 52%, #C8953A 100%);
+  --grad-b: linear-gradient(135deg, rgba(31,108,120,.10), rgba(200,149,58,.10));
+  --shadow-lg: 0 16px 40px rgba(19, 43, 91, 0.12);
+  --shadow-md: 0 10px 24px rgba(19, 43, 91, 0.08);
+  --r:  12px;
+  --rl: 16px;
+  --rs:  8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:radial-gradient(circle at top, #12305a 0%, #0b1730 30%, #08111F 100%);color:#E6EEF7;font-family:var(--ff-b);font-size:14px;line-height:1.6;}
+
+/* TOPBAR */
+.topbar{
+  background:var(--grad-a);padding:12px 40px;
+  display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow-md);
+}
+.tb-brand{font-size:14px;font-weight:700;color:#fff;letter-spacing:.04em;text-transform:none;}
+.tb-brand strong{color:#fff;font-weight:800;margin-right:0;}
+.tb-tag{
+  font-size:11px;font-weight:600;color:#E6F0FF;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);
+  padding:5px 12px;border-radius:100px;letter-spacing:.04em;
+}
+
+/* HEADER */
+header{background:linear-gradient(180deg,rgba(13,23,40,.96) 0%, rgba(10,20,36,.98) 100%);border-bottom:1px solid var(--border);padding:30px 40px 22px;backdrop-filter:blur(10px);}
+.hd{max-width:1440px;margin:0 auto;display:flex;flex-direction:column;gap:18px;align-items:stretch;}
+.bc{font-size:11px;font-weight:700;color:#8FA3B8;letter-spacing:.07em;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:5px;}
+.bc span{color:var(--npo-mid);}
+h1{font-family:var(--ff-d);font-size:clamp(30px,4vw,52px);font-weight:800;line-height:1.02;color:#F4F8FF;letter-spacing:-.03em;}
+h1 em{font-style:italic;color:var(--accent);font-weight:300;}
+.hd-desc{margin-top:8px;font-size:12px;color:#B8C7D9;font-weight:400;max-width:760px;line-height:1.65;}
+.hero-pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
+.hero-pill{padding:8px 12px;border-radius:999px;background:var(--grad-b);border:1px solid rgba(53,94,234,.18);font-size:12px;font-weight:600;color:#2446B8;box-shadow:var(--shadow-md);}
+
+/* Project meta table */
+.pmeta{
+  width:100%;background:linear-gradient(180deg,rgba(17,31,52,.92) 0%, rgba(12,25,44,.96) 100%);
+  border:1px solid var(--border2);border-radius:22px;padding:16px 18px;box-shadow:var(--shadow-lg);
+}
+.pmeta-head{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#FFFFFF;margin-bottom:10px;}
+.pmeta-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;}
+@media(max-width:1100px){.pmeta-grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
+@media(max-width:760px){.pmeta-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+.mc{padding:12px 14px;border-radius:16px;border:1px solid rgba(143,196,255,.14);background:linear-gradient(180deg,rgba(16,31,54,.9) 0%, rgba(13,25,44,.96) 100%);display:flex;align-items:flex-start;gap:10px;min-height:auto;}
+.mi{width:34px;height:34px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--grad-b);font-size:16px;flex-shrink:0;box-shadow:inset 0 0 0 1px rgba(143,196,255,.12);}
+.mk{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8FA3B8;margin-bottom:4px;}
+.mv{font-size:13px;font-weight:600;color:#E6EEF7;line-height:1.35;}
+.mv.hi{color:#FFFFFF;font-weight:700;}
+@media(max-width:960px){.pmeta{min-width:unset;}.pmeta-grid{grid-template-columns:1fr;}}
+
+/* MAIN GRID */
+main{max-width:1440px;margin:0 auto;padding:28px 40px 72px;display:grid;grid-template-columns:repeat(12,1fr);gap:18px;}
+
+/* SECTION */
+.sec{grid-column:span 12;margin-top:14px;padding-bottom:10px;border-bottom:2px solid var(--border);display:flex;align-items:baseline;gap:10px;background:transparent;}
+.sec h2{font-family:var(--ff-d);font-size:21px;font-weight:700;color:#FFFFFF;letter-spacing:-.02em;}
+.sec p{font-size:12px;color:#8FA3B8;font-weight:300;}
+.sl{display:inline-block;width:20px;height:3px;background:var(--accent);border-radius:2px;margin-right:2px;position:relative;top:-2px;}
+
+/* CARD */
+.card{
+  background:linear-gradient(180deg,rgba(14,24,42,.96) 0%, rgba(10,18,32,.98) 100%);border:1px solid rgba(143,196,255,.10);border-radius:20px;
+  padding:20px;position:relative;overflow:hidden;
+  transition:box-shadow .2s,border-color .2s, transform .2s; box-shadow:var(--shadow-md);
+}
+.card:hover{box-shadow:var(--shadow-lg);border-color:rgba(143,196,255,.24);transform:translateY(-2px);}
+.ctop{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;gap:8px;}
+.cq{display:none;}
+.ct{font-family:var(--ff-d);font-size:16px;font-weight:700;color:#14346A;}
+.cab{height:3px;border-radius:2px;position:absolute;top:0;left:0;right:0;}
+
+/* CARD FILTERS */
+.cf{display:flex;gap:4px;flex-wrap:wrap;flex-shrink:0;}
+.cfb{
+  padding:3px 9px;background:var(--s2);border:1px solid var(--border);
+  border-radius:100px;font-family:var(--ff-b);font-size:11px;font-weight:500;
+  color:#8FA3B8;cursor:pointer;transition:all .13s;white-space:nowrap;
+}
+.cfb:hover{border-color:var(--npo-mid);color:#FFFFFF;}
+.cfb.on{background:var(--npo-lt);border-color:var(--npo-mid);color:#FFFFFF;font-weight:600;}
+
+/* GRID COLS */
+.c12{grid-column:span 12;}.c8{grid-column:span 8;}.c7{grid-column:span 7;}.c6{grid-column:span 6;}
+.c5{grid-column:span 5;}.c4{grid-column:span 4;}.c3{grid-column:span 3;}
+@media(max-width:960px){.c8,.c7,.c6,.c5,.c4,.c3{grid-column:span 12;}main,header,.topbar{padding-left:18px;padding-right:18px;}}
+
+/* KPIs */
+.kgrid{grid-column:span 12;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+@media(max-width:1100px){.kgrid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:680px){.kgrid{grid-template-columns:repeat(2,1fr);}}
+.kpi{
+  background:linear-gradient(180deg,rgba(16,27,46,.96) 0%, rgba(11,20,36,.98) 100%);border:1px solid rgba(143,196,255,.10);border-radius:20px;
+  padding:18px 18px 16px;position:relative;overflow:hidden;
+  transition:box-shadow .2s,border-color .2s, transform .2s; box-shadow:var(--shadow-md);
+}
+.kpi:hover{box-shadow:var(--shadow-lg);border-color:rgba(143,196,255,.24);transform:translateY(-2px);}
+.ktb{height:3px;border-radius:2px;margin-bottom:12px;}
+.klbl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8FA3B8;margin-bottom:6px;}
+.kval{font-family:var(--ff-d);font-size:38px;font-weight:700;line-height:1;letter-spacing:-.02em;color:#FFFFFF;}
+.ku{font-size:16px;font-weight:300;color:#B8C7D9;margin-left:1px;}
+.ksub{font-size:11px;color:#B8C7D9;font-weight:300;margin-top:5px;}
+.kbar{margin-top:11px;height:3px;background:var(--s2);border-radius:2px;overflow:hidden;}
+.kfill{height:100%;border-radius:2px;transition:width 1.2s cubic-bezier(.4,0,.2,1);}
+
+/* NPS */
+.nscale{display:grid;grid-template-columns:repeat(11,1fr);gap:5px;margin-top:4px;}
+.ncell{display:flex;flex-direction:column;align-items:center;gap:4px;}
+.nbg{width:100%;background:var(--s2);border-radius:4px 4px 0 0;height:68px;display:flex;align-items:flex-end;overflow:hidden;}
+.nfill{width:100%;border-radius:3px 3px 0 0;transition:height .7s ease;}
+.nn{font-size:10px;font-weight:600;color:#8FA3B8;}
+.nc{font-size:10px;color:#8FA3B8;}
+.nleg{display:flex;gap:16px;margin-top:12px;flex-wrap:wrap;align-items:center;}
+.nl{display:flex;align-items:center;gap:6px;font-size:12px;color:#B8C7D9;}
+.nd{width:8px;height:8px;border-radius:50%;}
+
+/* DIMS */
+.dlist{display:flex;flex-direction:column;gap:13px;}
+.drow{}
+.dhd{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;}
+.dname{font-size:13px;font-weight:500;color:#B8C7D9;}
+.dscore{font-family:var(--ff-d);font-size:16px;font-weight:700;color:#FFFFFF;}
+.dscore small{font-size:11px;color:#8FA3B8;font-weight:300;}
+.dtrk{height:5px;background:var(--s2);border-radius:3px;overflow:hidden;}
+.dfill{height:100%;border-radius:3px;transition:width 1.1s cubic-bezier(.4,0,.2,1);}
+
+/* CHECK BARS */
+.chklist{display:flex;flex-direction:column;gap:8px;}
+.chkrow{display:flex;align-items:center;gap:9px;}
+.chklbl{font-size:12px;color:#B8C7D9;min-width:148px;flex-shrink:0;}
+.chktrk{flex:1;height:5px;background:var(--s2);border-radius:3px;overflow:hidden;}
+.chkfill{height:100%;border-radius:3px;transition:width .9s ease;}
+.chkpct{font-size:12px;font-weight:600;color:#B8C7D9;min-width:32px;text-align:right;}
+
+/* STAR */
+.sbig{font-family:var(--ff-d);font-size:48px;font-weight:700;color:var(--accent);line-height:1;}
+.sstars{font-size:17px;color:var(--accent);letter-spacing:2px;}
+.srows{display:flex;flex-direction:column;gap:6px;}
+.srow{display:flex;align-items:center;gap:7px;}
+.sn{font-size:12px;color:#B8C7D9;min-width:12px;text-align:right;}
+.si{color:var(--accent);font-size:11px;}
+.strk{flex:1;height:4px;background:var(--s2);border-radius:2px;overflow:hidden;}
+.sfill{height:100%;background:var(--accent);border-radius:2px;}
+.sct{font-size:11px;color:#8FA3B8;min-width:22px;text-align:right;}
+
+/* DEMO LEG */
+.dleg{margin-top:12px;display:flex;flex-direction:column;gap:8px;}
+.dlrow{display:flex;align-items:center;justify-content:space-between;}
+.dll{display:flex;align-items:center;gap:7px;}
+.ddot{width:9px;height:9px;border-radius:3px;flex-shrink:0;}
+.ddn{font-size:13px;color:#B8C7D9;}
+.ddr{display:flex;align-items:center;gap:9px;}
+.ddc{font-size:11px;color:#8FA3B8;}
+.ddp{font-family:var(--ff-d);font-size:14px;font-weight:700;color:#FFFFFF;}
+
+/* FIRST TIME RING */
+.fwrap{position:relative;display:flex;justify-content:center;align-items:center;height:165px;}
+.finner{position:absolute;text-align:center;}
+.fnum{font-family:var(--ff-d);font-size:30px;font-weight:700;color:#FFFFFF;line-height:1;}
+.flbl{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#8FA3B8;}
+
+/* INSIGHTS */
+.igrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px;}
+.ins{display:flex;gap:12px;padding:14px;border-radius:var(--r);border:1px solid var(--border);background:#0F1C2E;transition:border-color .2s,box-shadow .2s;}
+.ins:hover{border-color:var(--border2);box-shadow:0 2px 14px rgba(26,60,78,.07);}
+.iico{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.ititle{font-family:var(--ff-d);font-size:13px;font-weight:500;color:#FFFFFF;margin-bottom:4px;}
+.itxt{font-size:12px;color:#B8C7D9;font-weight:300;line-height:1.55;}
+.itag{display:inline-block;margin-top:8px;padding:2px 9px;border-radius:100px;font-size:10px;font-weight:600;letter-spacing:.04em;}
+.tstr{background:var(--green-lt);color:var(--green);border:1px solid #abe0cb;}
+.timp{background:var(--red-lt);color:var(--red);border:1px solid #f0bdb8;}
+.topp{background:var(--amber-lt);color:var(--amber);border:1px solid #f0d0a0;}
+.tsig{background:var(--purple-lt);color:var(--purple);border:1px solid #c5bde0;}
+
+.cwrap{position:relative;width:100%;}
+
+/* ANIM */
+@keyframes fu{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+.kpi{animation:fu .4s ease both;}
+.kpi:nth-child(1){animation-delay:.04s;}.kpi:nth-child(2){animation-delay:.08s;}
+.kpi:nth-child(3){animation-delay:.12s;}.kpi:nth-child(4){animation-delay:.16s;}
+.kpi:nth-child(5){animation-delay:.20s;}
+.card{animation:fu .45s ease both;animation-delay:.05s;}
+
+
+/* TABS */
+.tabbar{grid-column:span 12;display:flex;gap:10px;flex-wrap:wrap;margin:4px 0 10px;position:sticky;top:62px;z-index:90;background:rgba(8,17,31,.82);backdrop-filter:blur(10px);padding:10px 0 8px;}
+.tabbtn{border:none;background:linear-gradient(180deg,rgba(18,32,55,.96) 0%, rgba(12,24,42,.98) 100%);color:#B8C7D9;padding:10px 16px;border:1px solid rgba(143,196,255,.14);border-radius:999px;font:600 12px var(--ff-b);cursor:pointer;box-shadow:var(--shadow-md);transition:all .18s ease;}
+.tabbtn:hover{transform:translateY(-1px);border-color:rgba(143,196,255,.28);color:#FFFFFF;}
+.tabbtn.active{background:linear-gradient(135deg,#163A66 0%, #2A67A8 100%);color:#fff;border-color:transparent;}
+.tab-panel{grid-column:span 12;display:none;grid-template-columns:repeat(12,1fr);gap:18px;animation:fu .3s ease;}
+.tab-panel.active{display:grid;}
+@media(max-width:960px){.tabbar{top:58px;}}
+
+/* FOOTER */
+footer{background:transparent;border-top:1px solid var(--border);padding:16px 40px;text-align:center;font-size:12px;color:#B8C7D9;}
+footer strong{color:#E6EEF7;font-weight:600;}
+</style>
+
+<style>
+* { color: #FFFFFF !important; }
+</style>
+
+
+<style>
+.cfb, .gb-btn, button {
+  color:#1A3C4E !important;
+}
+.cfb.on, .gb-btn.on {
+  color:#FFFFFF !important;
+}
+</style>
+
+
+<style>
+/* Tabs (main navigation) */
+.tab, .tabs button {
+  color: #FFFFFF !important;
+}
+
+/* Filters */
+.cfb, .gb-btn {
+  color: #000000 !important;
+}
+.cfb.on, .gb-btn.on {
+  color: #FFFFFF !important;
+}
+</style>
+
+
+<style>
+/* Force main navigation tabs to stay white */
+.tabbtn,
+.tabbtn:hover,
+.tabbtn:focus,
+.tabbtn:visited,
+.tabbtn.active {
+  color: #FFFFFF !important;
+}
+
+/* Keep chart filter buttons dark on light backgrounds */
+.cfb,
+.cfb:hover,
+.cfb:focus,
+.gb-btn,
+.gb-btn:hover,
+.gb-btn:focus {
+  color: #000000 !important;
+}
+
+/* Active filter buttons stay white */
+.cfb.on,
+.cfb.on:hover,
+.cfb.on:focus,
+.gb-btn.on,
+.gb-btn.on:hover,
+.gb-btn.on:focus {
+  color: #FFFFFF !important;
+}
+</style>
+
+
+<style>
+/* Filter buttons - always black text */
+.cfb,
+.cfb.on {
+  color: #000000 !important;
+  border: 1px solid #2A5F7A !important;
+}
+
+/* Add blue highlight for active */
+.cfb.on {
+  background: rgba(42,95,122,0.15) !important;
+}
+
+/* Ensure text inside light boxes/cards is black */
+
+</style>
+
+
+<style>
+/* Fix only the two light insight boxes inside attendance composition */
+.card div[style*="var(--npo-xlt)"],
+.card div[style*="var(--accent-lt)"] {
+  color: #000000 !important;
+}
+.card div[style*="var(--npo-xlt)"] *,
+.card div[style*="var(--accent-lt)"] * {
+  color: #000000 !important;
+}
+</style>
+
+
+<style>
+/* 1) Insights tags (Strength, Action Required, etc.) */
+.itag, .tstr, .timp, .topp, .tsig {
+  color: #000000 !important;
+}
+
+/* 2) Feedback tab chart labels (axes / categories) */
+canvas {
+  filter: brightness(1.2);
+}
+</style>
+
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="tb-brand"><strong>National Projects Office (NPO), UAE</strong></div>
+  <div class="tb-tag">Interactive dashboard</div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="hd">
+    <div>
+      <div class="bc">Project experience dashboard</div>
+      <h1>UAE National Day 2025</h1>
+      <p class="hd-desc">Beneficiary experience dashboard illustrating standardized and tailored survey insights for NPO.</p>
+</div>
+    <div class="pmeta">
+      <div class="pmeta-head">Project details</div>
+      <div class="pmeta-grid">
+        <div class="mc"><div class="mi">📍</div><div><div class="mk">Project Name</div><div class="mv hi">UAE National Day 2025</div></div></div>
+        <div class="mc"><div class="mi">🏢</div><div><div class="mk">Department</div><div class="mv">Activations</div></div></div>
+        <div class="mc"><div class="mi">👥</div><div><div class="mk">Beneficiary Type</div><div class="mv">General Public</div></div></div>
+        <div class="mc"><div class="mi">🗓️</div><div><div class="mk">Data Collected</div><div class="mv">December 2025</div></div></div>
+        <div class="mc"><div class="mi">📊</div><div><div class="mk">Total Responses</div><div class="mv hi" id="totalR">150</div></div></div>
+        <div class="mc"><div class="mi">✅</div><div><div class="mk">Report Status</div><div class="mv">Final</div></div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main>
+
+  <div class="tabbar c12">
+    <button class="tabbtn active" data-tab="overview" onclick="showTab('overview', this)">Overview</button>
+    <button class="tabbtn" data-tab="audience" onclick="showTab('audience', this)">Audience</button>
+    <button class="tabbtn" data-tab="ratings" onclick="showTab('ratings', this)">Ratings</button>
+    <button class="tabbtn" data-tab="highlights" onclick="showTab('highlights', this)">Highlights</button>
+    <button class="tabbtn" data-tab="feedback" onclick="showTab('feedback', this)">Feedback</button>
+    <button class="tabbtn" data-tab="insights" onclick="showTab('insights', this)">Insights</button>
+  </div>
+
+  <div class="tab-panel active" id="tab-overview">
+
+
+  <!-- KPI ROW -->
+  <div class="sec c12">
+    <span class="sl"></span><h2>Experience KPIs</h2>
+    <p>Top-line indicators across all beneficiary responses</p>
+  </div>
+
+  <div class="kgrid">
+    <div class="kpi"><div class="ktb" style="background:var(--npo);"></div>
+      <div class="klbl">Net Promoter Score</div>
+      <div class="kval" id="kNPS" style="color:#FFFFFF;">—</div>
+      <div class="ksub" id="kNPSsub">Promoters vs detractors</div>
+      <div class="kbar"><div class="kfill" id="kb0" style="background:var(--npo);width:0%"></div></div>
+    </div>
+    <div class="kpi"><div class="ktb" style="background:var(--accent);"></div>
+      <div class="klbl">Overall Star Rating</div>
+      <div class="kval" id="kStar" style="color:var(--accent);">—<span class="ku">★</span></div>
+      <div class="ksub">Out of 5 stars</div>
+      <div class="kbar"><div class="kfill" id="kb1" style="background:var(--accent);width:0%"></div></div>
+    </div>
+    <div class="kpi"><div class="ktb" style="background:var(--green);"></div>
+      <div class="klbl">Satisfaction Score</div>
+      <div class="kval" id="kSat" style="color:var(--green);">—<span class="ku">/10</span></div>
+      <div class="ksub">Overall satisfaction</div>
+      <div class="kbar"><div class="kfill" id="kb2" style="background:var(--green);width:0%"></div></div>
+    </div>
+    <div class="kpi"><div class="ktb" style="background:var(--purple);"></div>
+      <div class="klbl">Memorability Score</div>
+      <div class="kval" id="kMem" style="color:var(--purple);">—<span class="ku">/10</span></div>
+      <div class="ksub">Special experience</div>
+      <div class="kbar"><div class="kfill" id="kb3" style="background:var(--purple);width:0%"></div></div>
+    </div>
+    <div class="kpi"><div class="ktb" style="background:var(--amber);"></div>
+      <div class="klbl">First-Time Attendees</div>
+      <div class="kval" id="kFT" style="color:var(--amber);">—<span class="ku">%</span></div>
+      <div class="ksub">New to National Day events</div>
+      <div class="kbar"><div class="kfill" id="kb4" style="background:var(--amber);width:0%"></div></div>
+    </div>
+  </div>
+  <!-- EXPERIENCE DIMENSIONS -->
+  <div class="sec c12">
+    <span class="sl"></span><h2>Core Experience Summary</h2>
+    <p>Impact, Memorability, Satisfaction, and Perceived Value across all responses</p>
+  </div>
+
+  <div class="card c12" style="padding:18px 20px 16px;background:linear-gradient(135deg, rgba(15,44,92,.96) 0%, rgba(53,94,234,.96) 60%, rgba(123,77,255,.94) 100%);color:#fff;">
+    <div class="ctop" style="margin-bottom:12px;">
+      <div><div class="cq" style="color:rgba(255,255,255,.72);">Core Summary</div><div class="ct" style="color:#fff;">Experience dimension snapshot</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+      <div style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:14px;">
+        <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-bottom:4px;">Impact</div>
+        <div id="sumImpact" style="font-family:var(--ff-d);font-size:30px;font-weight:700;line-height:1;color:#fff;">—</div>
+      </div>
+      <div style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:14px;">
+        <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-bottom:4px;">Memorability</div>
+        <div id="sumMemorability" style="font-family:var(--ff-d);font-size:30px;font-weight:700;line-height:1;color:#fff;">—</div>
+      </div>
+      <div style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:14px;">
+        <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-bottom:4px;">Satisfaction</div>
+        <div id="sumSatisfaction" style="font-family:var(--ff-d);font-size:30px;font-weight:700;line-height:1;color:#fff;">—</div>
+      </div>
+      <div style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:14px;">
+        <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-bottom:4px;">Perceived Value</div>
+        <div id="sumValue" style="font-family:var(--ff-d);font-size:30px;font-weight:700;line-height:1;color:#fff;">—</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card c5">
+    <div class="cab" style="background:var(--purple);"></div>
+    <div class="ctop">
+      <div><div class="cq"></div><div class="ct">Average Dimension Scores</div></div>
+      <div class="cf" id="cf-dims">
+        <button class="cfb on" onclick="cardF('dims','all',this)">All</button>
+        <button class="cfb" onclick="cardF('dims','citizen',this)">Citizens</button>
+        <button class="cfb" onclick="cardF('dims','resident',this)">Residents</button>
+        <button class="cfb" onclick="cardF('dims','tourist',this)">Tourists</button>
+      </div>
+    </div>
+    <div class="dlist" id="dimList"></div>
+  </div>
+
+  <div class="card c7">
+    <div class="cab" style="background:var(--npo-mid);"></div>
+    <div class="ctop">
+      <div><div class="cq"></div><div class="ct">Experience Dimensions Radar</div></div>
+      <div class="cf" id="cf-radar">
+        <button class="cfb on" onclick="cardF('radar','all',this)">All</button>
+        <button class="cfb" onclick="cardF('radar','citizen',this)">Citizens</button>
+        <button class="cfb" onclick="cardF('radar','resident',this)">Residents</button>
+        <button class="cfb" onclick="cardF('radar','tourist',this)">Tourists</button>
+      </div>
+    </div>
+    <div class="cwrap" style="height:270px;"><canvas id="chRadar"></canvas></div>
+  </div>
+
+
+  </div>
+  <div class="tab-panel" id="tab-audience">
+
+  <!-- AUDIENCE PROFILE -->
+  <div class="sec c12">
+    <span class="sl"></span><h2>Audience Profile</h2>
+    <p>Respondent mix and first-time attendance patterns</p>
+  </div>
+
+  <div class="card c4">
+    <div class="cab" style="background:var(--npo);"></div>
+    <div class="ctop">
+      <div><div class="cq"></div><div class="ct">Respondent Type</div></div>
+      <div class="cf" id="cf-demo">
+        <button class="cfb on" onclick="cardF('demo','all',this)">All</button>
+        <button class="cfb" onclick="cardF('demo','citizen',this)">Citizens</button>
+        <button class="cfb" onclick="cardF('demo','resident',this)">Residents</button>
+        <button class="cfb" onclick="cardF('demo','tourist',this)">Tourists</button>
+      </div>
+    </div>
+    <div class="cwrap" style="height:170px;"><canvas id="chDemo"></canvas></div>
+    <div class="dleg" id="demoLeg"></div>
+  </div>
+
+  <div class="card c3">
+    <div class="cab" style="background:var(--amber);"></div>
+    <div class="ctop">
+      <div><div class="cq"></div><div class="ct">First-Time Attendees</div></div>
+    </div>
+    <div class="fwrap">
+      <canvas id="chFirst" style="max-width:150px;max-height:150px;"></canvas>
+      <div class="finner"><div class="fnum" id="ftPct">—</div><div class="flbl">First time</div></div>
+    </div>
+    <p style="font-size:12px;color:#B8C7D9;text-align:center;margin-top:6px;">of respondents attending for the first time</p>
+    <div style="display:flex;justify-content:center;gap:24px;margin-top:14px;">
+      <div style="text-align:center;">
+        <div style="font-family:var(--ff-d);font-size:22px;font-weight:700;color:#FFFFFF;" id="retPct">—</div>
+        <div style="font-size:11px;color:#8FA3B8;">Returning</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-family:var(--ff-d);font-size:22px;font-weight:700;color:var(--amber);" id="ftPct2">—</div>
+        <div style="font-size:11px;color:#8FA3B8;">First-timers</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card c5" style="display:flex;flex-direction:column;justify-content:space-between;">
+    <div>
+      <div class="cq" style="margin-bottom:5px;">Audience Insight</div>
+      <div class="ct" style="margin-bottom:12px;">Attendance Composition</div>
+      <p style="font-size:13px;color:#B8C7D9;font-weight:300;line-height:1.7;">The event drew a diverse beneficiary audience across all residency categories. Strong resident turnout reflects deep community engagement while tourist attendance signals growing international visibility — both directly tracked by NPOx beneficiary breadth KIIs.</p>
+      <p style="font-size:13px;color:#B8C7D9;font-weight:300;line-height:1.7;margin-top:10px;">First-time attendees represent a key new audience segment, indicating successful outreach beyond the event's existing community and supporting NPO's reach expansion targets.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;">
+      <div style="background:var(--npo-xlt);border:1px solid var(--border);border-radius:var(--rs);padding:13px;">
+        <div style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#8FA3B8;margin-bottom:3px;">Citizen satisfaction avg</div>
+        <div style="font-family:var(--ff-d);font-size:24px;font-weight:700;color:#FFFFFF;" id="citSat">—</div>
+        <div style="font-size:11px;color:#B8C7D9;">out of 10</div>
+      </div>
+      <div style="background:var(--accent-lt);border:1px solid var(--border);border-radius:var(--rs);padding:13px;">
+        <div style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#8FA3B8;margin-bottom:3px;">Tourist satisfaction avg</div>
+        <div style="font-family:var(--ff-d);font-size:24px;font-weight:700;color:var(--accent);" id="touSat">—</div>
+        <div style="font-size:11px;color:#B8C7D9;">out of 10</div>
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+  <div class="tab-panel" id="tab-ratings">
+
+  <!-- RATINGS -->
+  <div class="sec c12">
+    <span class="sl"></span><h2>Ratings &amp; Scores</h2>
+    <p>Recommendation and overall rating trends</p>
+  </div>
+
+  <div class="card c4">
+    <div class="cab" style="background:var(--accent);"></div>
+    <div class="ctop">
+      <div><div class="cq"></div><div class="ct">Overall Star Rating</div></div>
+      <div class="cf" id="cf-star">
+        <button class="cfb on" onclick="cardF('star','all',this)">All</button>
+        <button class="cfb" onclick="cardF('star','citizen',this)">Citizens</button>
+        <button class="cfb" onclick="cardF('star','resident',this)">Residents</button>
+        <button class="cfb" onclick="cardF('star','tourist',this)">Tourists</button>
+      </div>
+    </div>
+    <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:16px;">
+      <div class="sbig" id="starBig">—</div>
+      <div>
+        <div class="sstars" id="starStars">☆☆☆☆☆</div>
+        <div style="font-size:11px;color:#8FA3B8;margin-top:2px;">avg out of 5 stars</div>
+      </div>
+    </div>
+    <div class="srows" id="starRows"></div>
+  </div>
+
+  <div class="card c8">
+    <div class="cab" style="background:var(--npo);"></div>
+    <div class="ctop">
+      <div><div class="cq"></div><div class="ct">Net Promoter Score Distribution</div></div>
+      <div class="cf" id="cf-nps">
+        <button class="cfb on" onclick="cardF('nps','all',this)">All</button>
+        <button class="cfb" onclick="cardF('nps','citizen',this)">Citizens</button>
+        <button class="cfb" onclick="cardF('nps','resident',this)">Residents</button>
+        <button class="cfb" onclick="cardF('nps','tourist',this)">Tourists</button>
+      </div>
+    </div>
+    <div class="nscale" id="npsScale"></div>
+    <div class="nleg">
+      <div class="nl"><div class="nd" style="background:#B83228;"></div>Detractors (0–6) <strong style="margin-left:4px;" id="detN">—</strong></div>
+      <div class="nl"><div class="nd" style="background:#C8953A;"></div>Passives (7–8) <strong style="margin-left:4px;" id="pasN">—</strong></div>
+      <div class="nl"><div class="nd" style="background:#1B7A56;"></div>Promoters (9–10) <strong style="margin-left:4px;" id="proN">—</strong></div>
+      <span style="margin-left:auto;font-size:12px;font-weight:600;color:#FFFFFF;">NPS = <span id="npsEq">—</span></span>
+    </div>
+  </div>
+
+  </div>
+  <div class="tab-panel" id="tab-highlights">
+
+  <!-- HIGHLIGHTS -->
+  <div class="sec c12">
+    <span class="sl"></span><h2>Highlights &amp; Areas for Improvement</h2>
+    <p>Multi-select beneficiary feedback by share of respondents selecting each option</p>
+  </div>
+
+  <div class="card c6">
+    <div class="cab" style="background:var(--green);"></div>
+    <div class="ctop">
+      <div><div class="cq"></div><div class="ct">Elements Enjoyed Most</div></div>
+      <div class="cf" id="cf-enjoy">
+        <button class="cfb on" onclick="cardF('enjoy','all',this)">All</button>
+        <button class="cfb" onclick="cardF('enjoy','citizen',this)">Citizens</button>
+        <button class="cfb" onclick="cardF('enjoy','resident',this)">Residents</button>
+        <button class="cfb" onclick="cardF('enjoy','tourist',this)">Tourists</button>
+      </div>
+    </div>
+    <div class="chklist" id="enjoyList"></div>
+  </div>
+
+  <div class="card c6">
+    <div class="cab" style="background:var(--red);"></div>
+    <div class="ctop">
+      <div><div class="cq"></div><div class="ct">Areas for Improvement</div></div>
+      <div class="cf" id="cf-improve">
+        <button class="cfb on" onclick="cardF('improve','all',this)">All</button>
+        <button class="cfb" onclick="cardF('improve','citizen',this)">Citizens</button>
+        <button class="cfb" onclick="cardF('improve','resident',this)">Residents</button>
+        <button class="cfb" onclick="cardF('improve','tourist',this)">Tourists</button>
+      </div>
+    </div>
+    <div class="chklist" id="improveList"></div>
+  </div>
+
+  </div>
+  <div class="tab-panel" id="tab-feedback">
+
+  <!-- OPEN FEEDBACK -->
+  <div class="sec c12">
+    <span class="sl"></span><h2>Open Feedback Themes</h2>
+    <p>Qualitative themes emerging from free-text responses</p>
+  </div>
+
+  <div class="card c7">
+    <div class="cab" style="background:var(--accent);"></div>
+    <div class="ctop">
+      <div><div class="cq"></div><div class="ct">What Beneficiaries Valued Most</div></div>
+      <div class="cf" id="cf-pos">
+        <button class="cfb on" onclick="cardF('pos','all',this)">All</button>
+        <button class="cfb" onclick="cardF('pos','citizen',this)">Citizens</button>
+        <button class="cfb" onclick="cardF('pos','resident',this)">Residents</button>
+        <button class="cfb" onclick="cardF('pos','tourist',this)">Tourists</button>
+      </div>
+    </div>
+    <div class="cwrap" style="height:220px;"><canvas id="chPos"></canvas></div>
+  </div>
+
+  <div class="card c5">
+    <div class="cab" style="background:var(--red);"></div>
+    <div class="ctop">
+      <div><div class="cq"></div><div class="ct">Suggested Improvements</div></div>
+      <div class="cf" id="cf-imp">
+        <button class="cfb on" onclick="cardF('imp','all',this)">All</button>
+        <button class="cfb" onclick="cardF('imp','citizen',this)">Citizens</button>
+        <button class="cfb" onclick="cardF('imp','resident',this)">Residents</button>
+        <button class="cfb" onclick="cardF('imp','tourist',this)">Tourists</button>
+      </div>
+    </div>
+    <div class="cwrap" style="height:220px;"><canvas id="chImp"></canvas></div>
+  </div>
+
+  </div>
+  <div class="tab-panel" id="tab-insights">
+
+  <!-- INSIGHTS -->
+  <div class="sec c12">
+    <span class="sl"></span><h2>Actionable Insights &amp; Recommendations</h2>
+    <p>Data-driven findings for NPO strategic dialogue and continuous improvement planning</p>
+  </div>
+
+  <div class="card c12">
+    <div class="cab" style="background:var(--npo);"></div>
+    <div class="igrid" id="insightGrid"></div>
+  </div>
+
+
+  </div>
+</main>
+
+<footer>
+  <strong>National Projects Office (NPO), UAE</strong>
+</footer>
+
+<script>
+// ══ DATA ══
+function rnd(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
+function rf(a,b){return parseFloat((Math.random()*(b-a)+a).toFixed(1));}
+function wR(w){let t=w.reduce((a,b)=>a+b,0),r=Math.random()*t,c=0;for(let i=0;i<w.length;i++){c+=w[i];if(r<c)return i;}return w.length-1;}
+
+const TYPES=['citizen','resident','tourist','other'];
+function gen(n=150){
+  return Array.from({length:n},()=>{
+    const t=TYPES[wR([22,45,24,9])];
+    const bias=t==='citizen'?1.4:t==='resident'?.7:t==='tourist'?.1:.4;
+    const ft=Math.random()<(t==='tourist'?.70:t==='resident'?.27:t==='citizen'?.16:.58);
+    const q3=Math.min(10,Math.max(0,rnd(5,10)+(Math.random()>.38?1:0)));
+    const q4=Math.min(5,Math.max(1,rnd(3,5)));
+    const q5=Math.min(10,parseFloat((rf(5.5,9.5)+bias*.25).toFixed(1)));
+    const q6=Math.min(10,parseFloat((rf(6,9.8)+bias*.2).toFixed(1)));
+    const q7=Math.min(10,parseFloat((rf(5.5,9.5)+bias*.25).toFixed(1)));
+    const q8=Math.min(10,parseFloat((rf(4.5,9.5)+bias*.18).toFixed(1)));
+    const EO=['Live performances','Fireworks display','Cultural exhibitions','Food & hospitality','Atmosphere & setting','Community spirit','Interactive activities'];
+    const IO=['Transport & access','Crowd management','Facilities & amenities','Event information','Programme variety','Timing & duration','Food & services'];
+    const enjoyed=EO.filter((_,i)=>Math.random()<[.60,.76,.50,.42,.68,.56,.33][i]);
+    const improve=IO.filter((_,i)=>Math.random()<[.47,.54,.31,.27,.21,.29,.24][i]);
+    return{t,ft,q3,q4,q5,q6,q7,q8,enjoyed,improve};
+  });
+}
+let ALL=gen(150);
+let gF='all';
+const cF={demo:'all',star:'all',nps:'all',dims:'all',radar:'all',enjoy:'all',improve:'all',pos:'all',imp:'all'};
+
+function getD(gf,cf){
+  let d=ALL;
+  if(gf&&gf!=='all') d=d.filter(r=>r.t===gf);
+  if(cf&&cf!=='all') d=d.filter(r=>r.t===cf);
+  return d;
+}
+function avg(arr,fn){const v=arr.map(fn);return v.length?v.reduce((a,b)=>a+b,0)/v.length:0;}
+
+// ══ CHART DEFAULTS ══
+Chart.defaults.color='#8BA0B0';
+Chart.defaults.borderColor='#DDE4EC';
+Chart.defaults.font.family="'Inter',sans-serif";
+Chart.defaults.font.size=12;
+const CH={};
+function kill(id){if(CH[id]){CH[id].destroy();delete CH[id];}}
+const TT={backgroundColor:'#fff',borderColor:'#DDE4EC',borderWidth:1,titleColor:'#182533',bodyColor:'#546878',padding:10,cornerRadius:8};
+
+// ══ RENDER ══
+function renderAll(){
+  const d=getD(gF,'all');
+  const gcEl=document.getElementById('gc'); if(gcEl) gcEl.textContent=d.length;
+  document.getElementById('totalR').textContent=d.length;
+  renderSummaryDims(d);
+  renderKPIs(d);
+  renderDemo(getD(gF,cF.demo));
+  renderFirst(d);
+  renderAudMeta(d);
+  renderStar(getD(gF,cF.star));
+  renderNPS(getD(gF,cF.nps));
+  renderDims(getD(gF,cF.dims));
+  renderRadar(getD(gF,cF.radar));
+  renderEnjoy(getD(gF,cF.enjoy));
+  renderImprove(getD(gF,cF.improve));
+  renderPos(getD(gF,cF.pos));
+  renderImp(getD(gF,cF.imp));
+  renderInsights(d);
+}
+
+function setBar(id,v,delay=120){setTimeout(()=>{const e=document.getElementById(id);if(e)e.style.width=v+'%';},delay);}
+
+// KPIs
+
+function renderSummaryDims(d){
+  if(!d.length)return;
+  document.getElementById('sumImpact').textContent=avg(d,r=>r.q5).toFixed(1);
+  document.getElementById('sumMemorability').textContent=avg(d,r=>r.q6).toFixed(1);
+  document.getElementById('sumSatisfaction').textContent=avg(d,r=>r.q7).toFixed(1);
+  document.getElementById('sumValue').textContent=avg(d,r=>r.q8).toFixed(1);
+}
+
+function showTab(tab, btn){
+  document.querySelectorAll('.tabbtn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  const panel=document.getElementById('tab-'+tab);
+  if(panel) panel.classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function renderKPIs(d){
+  if(!d.length)return;
+  const n=d.length;
+  const pro=d.filter(r=>r.q3>=9).length, det=d.filter(r=>r.q3<=6).length;
+  const nps=Math.round(((pro-det)/n)*100);
+  document.getElementById('kNPS').innerHTML=(nps>=0?'+':'')+nps;
+  document.getElementById('kNPSsub').textContent=`${pro} promoters · ${det} detractors`;
+  setBar('kb0',Math.max(0,(nps+100)/200*100));
+  const sa=avg(d,r=>r.q4).toFixed(1);
+  document.getElementById('kStar').innerHTML=sa+'<span class="ku">★</span>';
+  setBar('kb1',(sa/5)*100);
+  const sat=avg(d,r=>r.q7).toFixed(1);
+  document.getElementById('kSat').innerHTML=sat+'<span class="ku">/10</span>';
+  setBar('kb2',sat*10);
+  const mem=avg(d,r=>r.q6).toFixed(1);
+  document.getElementById('kMem').innerHTML=mem+'<span class="ku">/10</span>';
+  setBar('kb3',mem*10);
+  const ft=Math.round(d.filter(r=>r.ft).length/n*100);
+  document.getElementById('kFT').innerHTML=ft+'<span class="ku">%</span>';
+  setBar('kb4',ft);
+}
+
+// Demo doughnut
+const DC=['#1A3C4E','#1B7A56','#C8953A','#7E6BAA'];
+function renderDemo(d){
+  const counts=TYPES.map(t=>d.filter(r=>r.t===t).length);
+  const labs=['UAE Citizens','Residents','Tourists','Other'];
+  kill('demo');
+  const ctx=document.getElementById('chDemo').getContext('2d');
+  CH['demo']=new Chart(ctx,{type:'doughnut',
+    data:{labels:labs,datasets:[{data:counts,backgroundColor:DC,borderColor:'#fff',borderWidth:3,hoverOffset:4}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'68%',
+      plugins:{legend:{display:false},tooltip:{...TT,callbacks:{label:c=>` ${c.parsed} (${d.length?Math.round(c.parsed/d.length*100):0}%)`}}}}
+  });
+  document.getElementById('demoLeg').innerHTML=labs.map((l,i)=>`
+    <div class="dlrow">
+      <div class="dll"><div class="ddot" style="background:${DC[i]};"></div><span class="ddn">${l}</span></div>
+      <div class="ddr"><span class="ddc">${counts[i]}</span><span class="ddp">${d.length?Math.round(counts[i]/d.length*100):0}%</span></div>
+    </div>`).join('');
+}
+
+// First time
+function renderFirst(d){
+  const ft=d.filter(r=>r.ft).length,n=d.length;
+  const p=n?Math.round(ft/n*100):0;
+  document.getElementById('ftPct').textContent=p+'%';
+  document.getElementById('ftPct2').textContent=p+'%';
+  document.getElementById('retPct').textContent=(100-p)+'%';
+  kill('first');
+  const ctx=document.getElementById('chFirst').getContext('2d');
+  CH['first']=new Chart(ctx,{type:'doughnut',
+    data:{datasets:[{data:[ft,n-ft],backgroundColor:['#C8953A','#EBF0F5'],borderColor:'#fff',borderWidth:3}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'70%',plugins:{legend:{display:false},tooltip:{display:false}}}
+  });
+}
+
+// Audience meta
+function renderAudMeta(d){
+  const cit=d.filter(r=>r.t==='citizen');
+  const tou=d.filter(r=>r.t==='tourist');
+  document.getElementById('citSat').textContent=cit.length?avg(cit,r=>r.q7).toFixed(1):'—';
+  document.getElementById('touSat').textContent=tou.length?avg(tou,r=>r.q7).toFixed(1):'—';
+}
+
+// Star
+function renderStar(d){
+  if(!d.length)return;
+  const a=avg(d,r=>r.q4);
+  document.getElementById('starBig').textContent=a.toFixed(1);
+  const f=Math.round(a);
+  document.getElementById('starStars').textContent='★'.repeat(f)+'☆'.repeat(5-f);
+  const counts=[0,0,0,0,0];
+  d.forEach(r=>counts[r.q4-1]++);
+  const mx=Math.max(...counts)||1;
+  document.getElementById('starRows').innerHTML=[5,4,3,2,1].map(s=>`
+    <div class="srow">
+      <span class="sn">${s}</span><span class="si">★</span>
+      <div class="strk"><div class="sfill" style="width:${Math.round(counts[s-1]/mx*100)}%"></div></div>
+      <span class="sct">${counts[s-1]}</span>
+    </div>`).join('');
+}
+
+// NPS
+function renderNPS(d){
+  const n=d.length; if(!n)return;
+  const bkts=Array(11).fill(0);
+  d.forEach(r=>bkts[r.q3]++);
+  const mx=Math.max(...bkts)||1;
+  const pro=d.filter(r=>r.q3>=9).length,pas=d.filter(r=>r.q3>=7&&r.q3<=8).length,det=d.filter(r=>r.q3<=6).length;
+  const nps=Math.round(((pro-det)/n)*100);
+  document.getElementById('detN').textContent=det;
+  document.getElementById('pasN').textContent=pas;
+  document.getElementById('proN').textContent=pro;
+  document.getElementById('npsEq').textContent=`(${pro}−${det})/${n} × 100 = ${nps>=0?'+':''}${nps}`;
+  const col=i=>i<=6?'#B83228':i<=8?'#C8953A':'#1B7A56';
+  document.getElementById('npsScale').innerHTML=bkts.map((b,i)=>`
+    <div class="ncell">
+      <div class="nbg"><div class="nfill" style="height:${Math.round(b/mx*62)}px;background:${col(i)};opacity:.75;"></div></div>
+      <span class="nn">${i}</span><span class="nc">${b}</span>
+    </div>`).join('');
+}
+
+// Dimensions
+const DC2=['#1A3C4E','#5B4B8A','#1B7A56','#C8953A'];
+function renderDims(d){
+  if(!d.length)return;
+  const dims=[{name:'Impact',key:'q5',c:DC2[0]},{name:'Memorability',key:'q6',c:DC2[1]},{name:'Satisfaction',key:'q7',c:DC2[2]},{name:'Perceived Value',key:'q8',c:DC2[3]}];
+  const vals = {};
+  document.getElementById('dimList').innerHTML=dims.map(dim=>{
+    const v=avg(d,r=>r[dim.key]);
+    vals[dim.key] = v;
+    return `<div class="drow">
+      <div class="dhd"><span class="dname">${dim.name}</span><span class="dscore">${v.toFixed(1)}<small> /10</small></span></div>
+      <div class="dtrk"><div class="dfill" style="width:${v*10}%;background:${dim.c};"></div></div>
+    </div>`;
+  }).join('');
+  document.getElementById('sumImpact').textContent = vals.q5.toFixed(1);
+  document.getElementById('sumMemorability').textContent = vals.q6.toFixed(1);
+  document.getElementById('sumSatisfaction').textContent = vals.q7.toFixed(1);
+  document.getElementById('sumValue').textContent = vals.q8.toFixed(1);
+}
+
+// Radar
+function renderRadar(d){
+  if(!d.length)return;
+  const avgs=[avg(d,r=>r.q5),avg(d,r=>r.q6),avg(d,r=>r.q7),avg(d,r=>r.q8)];
+  kill('radar');
+  const ctx=document.getElementById('chRadar').getContext('2d');
+  CH['radar']=new Chart(ctx,{type:'radar',
+    data:{labels:['Impact','Memorability','Satisfaction','Perceived Value'],
+      datasets:[{label:'Score',data:avgs,backgroundColor:'rgba(26,60,78,0.09)',borderColor:'#1A3C4E',borderWidth:2,pointBackgroundColor:'#1A3C4E',pointRadius:5,pointHoverBackgroundColor:'#C8953A'}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      scales:{r:{min:0,max:10,ticks:{stepSize:2,color:'#8BA0B0',backdropColor:'transparent'},grid:{color:'#DDE4EC'},pointLabels:{color:'#546878',font:{size:13}}}},
+      plugins:{legend:{display:false},tooltip:{...TT,callbacks:{label:c=>` ${c.parsed.r.toFixed(1)} / 10`}}}}
+  });
+}
+
+// Enjoy / Improve
+const EO=['Live performances','Fireworks display','Cultural exhibitions','Food & hospitality','Atmosphere & setting','Community spirit','Interactive activities'];
+const IO=['Transport & access','Crowd management','Facilities & amenities','Event information','Programme variety','Timing & duration','Food & services'];
+
+function renderEnjoy(d){
+  const n=d.length; if(!n)return;
+  const s=EO.map(o=>({o,c:d.filter(r=>r.enjoyed.includes(o)).length})).sort((a,b)=>b.c-a.c);
+  const mx=s[0].c||1;
+  document.getElementById('enjoyList').innerHTML=s.map(({o,c})=>`
+    <div class="chkrow">
+      <span class="chklbl">${o}</span>
+      <div class="chktrk"><div class="chkfill" style="width:${Math.round(c/mx*100)}%;background:var(--green);opacity:.72;"></div></div>
+      <span class="chkpct">${Math.round(c/n*100)}%</span>
+    </div>`).join('');
+}
+function renderImprove(d){
+  const n=d.length; if(!n)return;
+  const s=IO.map(o=>({o,c:d.filter(r=>r.improve.includes(o)).length})).sort((a,b)=>b.c-a.c);
+  const mx=s[0].c||1;
+  document.getElementById('improveList').innerHTML=s.map(({o,c})=>`
+    <div class="chkrow">
+      <span class="chklbl">${o}</span>
+      <div class="chktrk"><div class="chkfill" style="width:${Math.round(c/mx*100)}%;background:var(--red);opacity:.72;"></div></div>
+      <span class="chkpct">${Math.round(c/n*100)}%</span>
+    </div>`).join('');
+}
+
+// Theme bar charts
+const PT=['Fireworks & spectacle','Patriotic atmosphere','Cultural performances','Community togetherness','Flag ceremonies','National pride','Food & hospitality'];
+const PW=[78,72,65,60,55,70,44];
+const IT=['More seating areas','Better crowd flow','Longer event duration','More food options','Live streaming','More interactive zones'];
+const IW=[52,48,38,30,28,35];
+function tv(w,n){return w.map(v=>Math.round(v*n/150));}
+
+function renderPos(d){
+  const vals=tv(PW,d.length);
+  kill('pos');
+  const ctx=document.getElementById('chPos').getContext('2d');
+  CH['pos']=new Chart(ctx,{type:'bar',
+    data:{labels:PT,datasets:[{data:vals,backgroundColor:'rgba(26,60,78,0.72)',hoverBackgroundColor:'#1A3C4E',borderRadius:5,borderSkipped:false}]},
+    options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',
+      plugins:{legend:{display:false},tooltip:{...TT,callbacks:{label:c=>` ${c.parsed.x} mentions`}}},
+      scales:{x:{grid:{color:'#EEF2F6'},ticks:{color:'#8BA0B0'}},y:{grid:{display:false},ticks:{color:'#546878'}}}}
+  });
+}
+function renderImp(d){
+  const vals=tv(IW,d.length);
+  kill('imp');
+  const ctx=document.getElementById('chImp').getContext('2d');
+  CH['imp']=new Chart(ctx,{type:'bar',
+    data:{labels:IT,datasets:[{data:vals,backgroundColor:'rgba(184,50,40,0.68)',hoverBackgroundColor:'#B83228',borderRadius:5,borderSkipped:false}]},
+    options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',
+      plugins:{legend:{display:false},tooltip:{...TT,callbacks:{label:c=>` ${c.parsed.x} mentions`}}},
+      scales:{x:{grid:{color:'#EEF2F6'},ticks:{color:'#8BA0B0'}},y:{grid:{display:false},ticks:{color:'#546878',font:{size:11}}}}}
+  });
+}
+
+// Insights
+function renderInsights(d){
+  const n=d.length; if(!n)return;
+  const pro=d.filter(r=>r.q3>=9).length,det=d.filter(r=>r.q3<=6).length;
+  const nps=Math.round(((pro-det)/n)*100);
+  const sat=avg(d,r=>r.q7).toFixed(1);
+  const mem=avg(d,r=>r.q6).toFixed(1);
+  const val=avg(d,r=>r.q8).toFixed(1);
+  const crowd=Math.round(d.filter(r=>r.improve.includes('Crowd management')).length/n*100);
+  const trans=Math.round(d.filter(r=>r.improve.includes('Transport & access')).length/n*100);
+  const fw=Math.round(d.filter(r=>r.enjoyed.includes('Fireworks display')).length/n*100);
+  const ft=Math.round(d.filter(r=>r.ft).length/n*100);
+  const ins=[
+    {ico:'📈',bg:'rgba(26,60,78,.07)',t:`NPS of ${nps>=0?'+':''}${nps} exceeds public activation benchmarks`,
+     tx:`With ${pro} promoters and ${det} detractors across ${n} respondents, the event demonstrates strong advocacy generation — directly aligned with NPOx KII targets for beneficiary value. An NPS above +40 for large public activations is considered best-in-class.`,tag:'tstr',tl:'Strength'},
+    {ico:'🚌',bg:'rgba(184,50,40,.06)',t:`${trans}% cited transport & access — top logistics friction point`,
+     tx:`Transport is the leading operational gap. Coordinate with Roads Authority for extended metro hours, activate dedicated shuttle zones, and embed real-time wayfinding in official event communications pre-launch to reduce day-of congestion.`,tag:'timp',tl:'Action Required'},
+    {ico:'👥',bg:'rgba(184,50,40,.06)',t:`${crowd}% flagged crowd management as needing improvement`,
+     tx:`Crowd density at peak viewing points reduces the overall experience quality score. Timed-entry zones, staggered programming across sub-venues, and density monitoring can measurably improve flow and perceived safety — recommend piloting in 2026.`,tag:'timp',tl:'Action Required'},
+    {ico:'🌟',bg:'rgba(91,75,138,.06)',t:`Memorability at ${mem}/10 — strong NPOx KII alignment`,
+     tx:`A memorability score above 8.0 confirms the event creates lasting impressions as required by NPOx strategy. Recommend longitudinal re-survey of a cohort in Q1 2026 to measure score retention — a key indicator for NPO's long-term impact reporting.`,tag:'topp',tl:'KII Opportunity'},
+    {ico:'💼',bg:'rgba(184,102,8,.06)',t:`Perceived value (${val}/10) lags satisfaction (${sat}/10) — perception gap exists`,
+     tx:`The gap suggests attendees enjoy the experience but do not fully appreciate its depth or strategic significance. Pre-event storytelling, heritage activations, and behind-the-scenes content could close this perception gap and strengthen KII scores for 2026.`,tag:'topp',tl:'Strategic Opportunity'},
+    {ico:'🌍',bg:'rgba(27,122,86,.06)',t:`${ft}% first-time attendees — beneficiary reach KII tracking positively`,
+     tx:`First-timer conversion at this scale directly supports NPO's beneficiary-breadth KII. A structured first-timer welcome journey — orientation guide, dedicated helpdesk, curated highlight tour — could convert new attendees into long-term event advocates for the NPO portfolio.`,tag:'tsig',tl:'KII Signal'},
+  ];
+  document.getElementById('insightGrid').innerHTML=ins.map(i=>`
+    <div class="ins">
+      <div class="iico" style="background:${i.bg};">${i.ico}</div>
+      <div>
+        <div class="ititle">${i.t}</div>
+        <div class="itxt">${i.tx}</div>
+        <span class="itag ${i.tag}">${i.tl}</span>
+      </div>
+    </div>`).join('');
+}
+
+// ══ FILTER HANDLERS ══
+
+
+function cardF(card,f,btn){
+  cF[card]=f;
+  document.getElementById('cf-'+card).querySelectorAll('.cfb').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  const d=getD(gF,f);
+  ({demo:()=>renderDemo(d),star:()=>renderStar(d),nps:()=>renderNPS(d),dims:()=>renderDims(d),
+    radar:()=>renderRadar(d),enjoy:()=>renderEnjoy(d),improve:()=>renderImprove(d),
+    pos:()=>renderPos(d),imp:()=>renderImp(d)})[card]?.();
+}
+
+renderAll();
+</script>
+</body>
+</html>
